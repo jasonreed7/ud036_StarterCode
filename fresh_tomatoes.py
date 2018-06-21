@@ -1,7 +1,34 @@
 import webbrowser
 import os
 import re
+import media
 
+# Instantiate movies
+GOODFELLAS = media.Movie('Goodfellas',
+                         'http://t0.gstatic.com/images?q=tbn:ANd9GcSkuxYKBhyPQq4e_cbYRDfZRjWkUx2GIKlUpUkHiuVeLg2GhN0D',
+                         'https://www.youtube.com/watch?v=2ilzidi_J8Q')
+
+DEPARTED = media.Movie('The Departed',
+                       'http://t2.gstatic.com/images?q=tbn:ANd9GcSC6fYT3Yqz1zhIo1KXHkjmikJW0NRAksvhmDsOPwugFUYS7K2h',
+                       'https://www.youtube.com/watch?v=iojhqm0JTW4')
+
+WOLF_OF_WALL_STREET = media.Movie('The Wolf of Wall Street',
+                                  'http://t1.gstatic.com/images?q=tbn:ANd9GcTm52BWbxXmwOpfz5rmx0BNBj79kSQoGpYPq4TVt07Jel5En6aC',
+                                  'https://www.youtube.com/watch?v=iszwuX1AK6A')
+
+NACHO_LIBRE = media.Movie('Nacho Libre',
+                          'http://www.gstatic.com/tv/thumb/movieposters/160705/p160705_p_v8_ac.jpg',
+                          'https://www.youtube.com/watch?v=ElVSw6xpQ70')
+
+AUSTIN_POWERS = media.Movie('Austin Powers: International Man of Mystery',
+                            'http://t3.gstatic.com/images?q=tbn:ANd9GcRL9p4e-LSjwXBqgvJjNQsZmRLqRf1L7mYp4VpGasD7ZDgziA4p',
+                            'https://www.youtube.com/watch?v=5vsANcS4Ml8')
+
+OCEANS_8 = media.Movie('Ocean\'s 8',
+                       'https://pbs.twimg.com/media/DRBvJVdV4AAKXeO.jpg:large',
+                       'https://www.youtube.com/watch?v=MFWF9dU5Zc0')
+
+movies = [GOODFELLAS, DEPARTED, WOLF_OF_WALL_STREET, NACHO_LIBRE, AUSTIN_POWERS, OCEANS_8]
 
 # Styles and scripting for the page
 main_page_head = '''
@@ -165,3 +192,5 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+
+open_movies_page(movies)
